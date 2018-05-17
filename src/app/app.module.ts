@@ -14,11 +14,11 @@ const routes : Routes = [
   component: NavBarComponent
 },
 {
-  path:'userForm',
+  path:'userForm/:id',
   component: UserFormComponent
 },
 {
-  path: 'anotherForm',
+  path: 'friendsForm',
   component: FormCompComponent
 },
 {

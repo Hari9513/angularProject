@@ -1,3 +1,9 @@
-<p>
-  form-comp works!
-</p>
+<div class="container">
+	<div class="row justify-content-center">
+		<div class="col-6">
+			<div *ngFor="let friend of friends">
+				<p><a [routerLink]="['/userForm', i]">{{friend.name}}</a></p>
+			</div>
+		</div>
+	</div>
+</div>

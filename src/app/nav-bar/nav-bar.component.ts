@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { MyServiceService } from '../my-service.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -7,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+  	private friendServ: MyServiceService 
+  	) { }
 
   ngOnInit() {
   }

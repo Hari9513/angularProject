@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MyServiceService } from '../my-service.service';
 
 @Component({
   selector: 'app-form-comp',
@@ -6,8 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./form-comp.component.css']
 })
 export class FormCompComponent implements OnInit {
-
-  constructor() { }
+friends;
+  constructor(
+  	private friendServ : MyServiceService
+  	) { 
+       this.friends = this.friendServ.getFriendsList();
+   }
 
   ngOnInit() {
   }
