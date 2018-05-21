@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { FormCompComponent } from './form-comp/form-comp.component';
 import { UserFormComponent } from './user-form/user-form.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { NewFormComponent } from './new-form/new-form.component';
 
 const routes : Routes = [
 {
@@ -20,6 +21,10 @@ const routes : Routes = [
 {
   path: 'friendsForm',
   component: FormCompComponent
+},
+{
+  path: 'newForm',
+  component: NewFormComponent
 },
 {
   path: '',
@@ -37,7 +42,8 @@ const routes : Routes = [
   AppComponent,
   FormCompComponent,
   UserFormComponent,
-  NavBarComponent
+  NavBarComponent,
+  NewFormComponent
   ],
   imports: [
   BrowserModule,

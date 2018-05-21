@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row justify-content-center">
 		<div class="col-6">
-			<div *ngFor="let friend of friends">
+			<div *ngFor="let friend of friends; let i = index;">
 				<p><a [routerLink]="['/userForm', i]">{{friend.name}}</a></p>
 			</div>
 		</div>
