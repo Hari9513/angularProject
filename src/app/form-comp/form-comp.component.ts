@@ -8,13 +8,27 @@ import { MyServiceService } from '../my-service.service';
 })
 export class FormCompComponent implements OnInit {
 friends;
+userData;
   constructor(
   	private friendServ : MyServiceService
-  	) { 
-       this.friends = this.friendServ.getFriendsList();
-   }
+  	){}
 
   ngOnInit() {
+    this.friendServ.getUser()
+    .then(data => {
+      this.userData = data;
+    })
+  }
+
+  deleteUser(data: any){
+    let email = data
+    this.friendServ.deleteUserByID({email})
+    .then(data => {
+      this.ngOnInit();
+    })
+    .catch(error => {
+      console.log(error)
+    })
   }
 
 }

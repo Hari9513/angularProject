@@ -17,9 +17,14 @@ export class UserFormComponent implements OnInit {
 		) { }
 
 	ngOnInit() {
-		var id = this.route.snapshot.params.id;
-		var ID = Number(id);
-		this.friendData = this.friendServ.getFriends(ID);
-		this.userData = Object.keys(this.friendData);
+		this.friendServ.getUser()
+		.then(data => {
+			console.log(data);
+		})
+		// var id = this.route.snapshot.params.id;
+		// var ID = Number(id);
+		// this.friendData = this.friendServ.getFriends(ID);
+		// this.userData = Object.keys(this.friendData);
+		// console.log(this.friendServ.getFriendsList());
 	}
 }
