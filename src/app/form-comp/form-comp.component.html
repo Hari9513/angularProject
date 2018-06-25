@@ -1,11 +1,11 @@
 
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-6">
-      <!-- <div *ngFor="let friend of friends; let i = index;">
-				<p><a [routerLink]="['/userForm', i]">{{friend.name}}</a></p>
-			</div> -->
-      <table class="table table-bordered">
+    <div class="col-sm-12">
+      <div class="text-right mt-10">
+        <button class="btn btn-primary" routerLink="/newForm">Create User</button>
+			</div>
+      <table class="table table-bordered mt-10">
         <thead>
           <tr>
             <th>S.No</th>
@@ -20,10 +20,10 @@
         <tbody>
           <tr *ngFor="let user of userData index as i">
           	<td class="text-center">{{i+1}}</td>
-            <td class="text-center text-capitalize">{{user.name}}</td>
-            <td class="text-center">{{user.age}}</td>
+            <td class="text-center text-capitalize">{{user.name?user.name:'N/A'}}</td>
+            <td class="text-center">{{user.age?user.age:'N/A'}}</td>
             <td class="text-center">{{user.phone}}</td>
-            <td class="text-center">{{user.email}}</td>
+            <td class="text-center">{{user.email?user.email:'N/A'}}</td>
             <td class="text-center" routerLink="/viewUser" [queryParams]="{id: i}">Edit</td>
             <td class="text-center" (click)="deleteUser(user.email)">Delete</td>
           </tr>

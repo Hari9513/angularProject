@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MyServiceService } from '../my-service.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-view-user',
@@ -14,7 +13,8 @@ export class ViewUserComponent implements OnInit {
   userData = {};
   constructor(
   	private userServ: MyServiceService,
-  	private route: ActivatedRoute
+    private route: ActivatedRoute,
+  	private router: Router
   	) { 
 }
   ngOnInit() {
@@ -40,7 +40,7 @@ export class ViewUserComponent implements OnInit {
     this.userServ.getUserByID(data)
     .then(data => {
       console.log(data);
-      this.route.navigate(['/friendsForm'])
+      this.router.navigate(['/friendsForm'])
     })
     .catch(error => {
       console.log(error)

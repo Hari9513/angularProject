@@ -28,7 +28,8 @@ router.route('/user')
 })
 
 .put((req, res) => {
-	userSchema.findOneAndUpdate({"email": req.body.email}, { $set : req.body}, {new : true})
+	console.log(req.body);
+	userSchema.findOneAndUpdate({"_id": req.body._id}, { $set : req.body}, {new : true})
 	.then(data => {
 		res.json(data);
 	})
