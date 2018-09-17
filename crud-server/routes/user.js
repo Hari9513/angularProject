@@ -1,13 +1,11 @@
 'use strict';
 const express = require('express');
 const { userSchema } = require('../models');
-
 const router = express.Router();
 
 router.route('/user')
 .post((req, res) => {
 	const userData = new userSchema(req.body);
-
 	userData.save()
 	.then(data => {
 		res.json(data);
@@ -28,7 +26,6 @@ router.route('/user')
 })
 
 .put((req, res) => {
-	console.log(req.body);
 	userSchema.findOneAndUpdate({"_id": req.body._id}, { $set : req.body}, {new : true})
 	.then(data => {
 		res.json(data);

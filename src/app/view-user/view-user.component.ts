@@ -29,7 +29,6 @@ export class ViewUserComponent implements OnInit {
     .then(data => {
       let ID = userId.params.id
       this.user = data[ID];
-      console.log(this.user)
     })
     .catch(error =>{
       console.log(error)
@@ -39,7 +38,6 @@ export class ViewUserComponent implements OnInit {
   updateForm(data){
     this.userServ.getUserByID(data)
     .then(data => {
-      console.log(data);
       this.router.navigate(['/friendsForm'])
     })
     .catch(error => {

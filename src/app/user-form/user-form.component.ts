@@ -19,7 +19,6 @@ export class UserFormComponent implements OnInit {
 	ngOnInit() {
 		this.friendServ.getUser()
 		.then(data => {
-			console.log(data);
 		})
 		// var id = this.route.snapshot.params.id;
 		// var ID = Number(id);

@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 	styleUrls: ['./new-form.component.css']
 })
 export class NewFormComponent implements OnInit {
-	user = {};
+	user= {};
 
 	constructor(
 		private myServ: MyServiceService,
@@ -20,10 +20,9 @@ export class NewFormComponent implements OnInit {
 	}
 
 	submitForm(user){
-    console.log(user)
 		this.myServ.createUser(user)
 		.then(data => {
-			this.route.navigate(['/friendsForm'])
+			this.route.navigate(['/userList'])
 		})
 		.catch(error => {
 			console.log(error)

@@ -1,6 +1,6 @@
 'use strict';
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/userDB')
+mongoose.connect('mongodb://localhost/usersDB')
 .then(data => {
 	console.log('DB Created');
 })

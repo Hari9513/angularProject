@@ -11,7 +11,6 @@ import { UserFormComponent } from './user-form/user-form.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { NewFormComponent } from './new-form/new-form.component';
 import { ViewUserComponent } from './view-user/view-user.component';
-import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 // import { ResolveService } from './resolveService';
  
 
@@ -25,9 +24,8 @@ const routes : Routes = [
   component: UserFormComponent
 },
 {
-  path: 'friendsForm',
+  path: 'userList',
   component: FormCompComponent
-  // resolve:{userData: ResolveService}
 },
 {
   path: 'newForm',
@@ -38,17 +36,13 @@ const routes : Routes = [
   component: ViewUserComponent
 },
 {
-  path: 'reactiveForm',
-  component: ReactiveFormComponent
-},
-{
   path: '',
-  redirectTo: '/userForm',
+  redirectTo: '/userList',
   pathMatch: 'full'
 },
 {
   path: '**',
-  redirectTo: '/userForm'
+  redirectTo: '/userList'
 }
 ];
 
@@ -59,8 +53,7 @@ const routes : Routes = [
   UserFormComponent,
   NavBarComponent,
   NewFormComponent,
-  ViewUserComponent,
-  ReactiveFormComponent
+  ViewUserComponent
   ],
   imports: [
   BrowserModule,

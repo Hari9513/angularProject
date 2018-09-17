@@ -11,9 +11,15 @@ friends;
 userData;
   constructor(
   	private friendServ : MyServiceService
-  	){}
+  	){
+      this.getUser();
+    }
 
   ngOnInit() {
+
+  }
+
+  getUser(){
     this.friendServ.getUser()
     .then(data => {
       this.userData = data;
@@ -21,10 +27,10 @@ userData;
   }
 
   deleteUser(data: any){
-    let email = data
+    let email = data;
     this.friendServ.deleteUserByID({email})
     .then(data => {
-      this.ngOnInit();
+      this.getUser();
     })
     .catch(error => {
       console.log(error)

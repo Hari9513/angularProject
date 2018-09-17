@@ -4,9 +4,9 @@ const Schema = mongoose.Schema;
 
 const Student = new Schema({
 	name:{type:String},
-	age:{type:Number},
-	phone:{type:Number},
-	email:{type:String, unique: true}
+	address:{type:String},
+	pan:{type:String},
+	aadhar:{type:String}
 });
 
 module.exports = mongoose.model('Student', Student)

@@ -6,6 +6,8 @@ const cors = require('cors');
 const port = 8000;
 const { db } = require('./models');
 
+app.use(express.static('public'));
+
 app.use(cors());
 
 app.use(bodyParser.urlencoded({extend : true}));
