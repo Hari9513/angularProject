@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MyServiceService } from '../my-service.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { UserService } from '../services/common/user.service';
 
 @Component({
   selector: 'app-view-user',
@@ -12,7 +12,7 @@ export class ViewUserComponent implements OnInit {
   orderObj;
   userData = {};
   constructor(
-  	private userServ: MyServiceService,
+  	private userService: UserService,
     private route: ActivatedRoute,
   	private router: Router
   	) { 
@@ -25,7 +25,7 @@ export class ViewUserComponent implements OnInit {
   }
 
   getAllUsers(userId){
-    this.userServ.getUser()
+    this.userService.getUser()
     .then(data => {
       let ID = userId.params.id
       this.user = data[ID];
@@ -36,7 +36,7 @@ export class ViewUserComponent implements OnInit {
   }
 
   updateForm(data){
-    this.userServ.getUserByID(data)
+    this.userService.getUserByID(data)
     .then(data => {
       this.router.navigate(['/friendsForm'])
     })

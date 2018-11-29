@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MyServiceService } from '../my-service.service';
+import { UserService } from '../services/common/user.service';
 
 @Component({
   selector: 'app-form-comp',
@@ -10,7 +10,7 @@ export class FormCompComponent implements OnInit {
 friends;
 userData;
   constructor(
-  	private friendServ : MyServiceService
+  	public userService : UserService
   	){
       this.getUser();
     }
@@ -20,7 +20,7 @@ userData;
   }
 
   getUser(){
-    this.friendServ.getUser()
+    this.userService.getUser()
     .then(data => {
       this.userData = data;
     })
@@ -28,7 +28,7 @@ userData;
 
   deleteUser(data: any){
     let email = data;
-    this.friendServ.deleteUserByID({email})
+    this.userService.deleteUserByID({email})
     .then(data => {
       this.getUser();
     })

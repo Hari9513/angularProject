@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 // import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { MyServiceService } from '../my-service.service';
 import { Router } from '@angular/router';
+import { UserService } from '../services/common/user.service';
 
 @Component({
 	selector: 'app-new-form',
@@ -12,7 +12,7 @@ export class NewFormComponent implements OnInit {
 	user= {};
 
 	constructor(
-		private myServ: MyServiceService,
+		private userService: UserService,
 		private route: Router
 		) { }
 
@@ -20,7 +20,7 @@ export class NewFormComponent implements OnInit {
 	}
 
 	submitForm(user){
-		this.myServ.createUser(user)
+		this.userService.createUser(user)
 		.then(data => {
 			this.route.navigate(['/userList'])
 		})

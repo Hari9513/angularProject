@@ -8,13 +8,13 @@
       <table class="table table-bordered mt-10">
         <thead>
           <tr>
-            <th>S.No</th>
-            <th>Name</th>
-            <th>Address</th>
-            <th>PAN Number</th>
-            <th>Aadhaar Number</th>
-            <th>Action</th>
-            <th>Delete</th>
+            <th class="text-center">S.No</th>
+            <th class="text-center">Name</th>
+            <th class="text-center">Address</th>
+            <th class="text-center">PAN Number</th>
+            <th class="text-center">Aadhaar Number</th>
+            <th class="text-center">Action</th>
+            <!-- <th>Delete</th> -->
           </tr>
         </thead>
         <tbody>
@@ -24,8 +24,8 @@
             <td class="text-center">{{user.address?user.address:'N/A'}}</td>
             <td class="text-center">{{user.pan}}</td>
             <td class="text-center">{{user.aadhar?user.aadhar:'N/A'}}</td>
-            <td class="text-center" routerLink="/viewUser" [queryParams]="{id: i}">Edit</td>
-            <td class="text-center" (click)="deleteUser(user.email)">Delete</td>
+            <td class="text-center"><span routerLink="/viewUser" [queryParams]="{id: i}">Edit</span>&nbsp; | &nbsp;<span (click)="deleteUser(user.email)">Delete</span></td>
+            <!-- <td class="text-center"></td> -->
           </tr>
         </tbody>
       </table>

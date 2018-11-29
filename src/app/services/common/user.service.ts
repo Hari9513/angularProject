@@ -1,16 +1,17 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-const apiURL: string = 'http://localhost:8000/api/user';
+import { HttpService } from './http.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class MyServiceService {
+export class UserService {
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    public http: HttpService
+  ) { }
 
   getUser() {
-  	return this.http.get(apiURL)
+  	return this.http.get('user')
   	.toPromise()
       .then((data: any) => {
         return data;
@@ -22,7 +23,7 @@ export class MyServiceService {
 
 
   getUserByID(data) {
-  	return this.http.put(apiURL, data)
+  	return this.http.put('user', data)
   	.toPromise()
       .then((data: any) => {
         return data;
@@ -33,7 +34,7 @@ export class MyServiceService {
   }
 
   deleteUserByID(data) {
-    return this.http.post(apiURL + '/delete', data)
+    return this.http.post('user' + '/delete', data)
     .toPromise()
       .then((data: any) => {
         return data;
@@ -44,7 +45,7 @@ export class MyServiceService {
   }
   
   createUser(data) {
-  	return this.http.post(apiURL , data)
+  	return this.http.post('user' , data)
   	.toPromise()
       .then((data: any) => {
         return data;
@@ -53,5 +54,4 @@ export class MyServiceService {
         console.log(err)
       })
   }
-
 }

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { MyServiceService } from '../my-service.service';
 
 @Component({
 	selector: 'app-user-form',
@@ -13,13 +12,12 @@ export class UserFormComponent implements OnInit {
 
 	constructor(
 		private route: ActivatedRoute,
-		private friendServ: MyServiceService
 		) { }
 
 	ngOnInit() {
-		this.friendServ.getUser()
-		.then(data => {
-		})
+		// this.friendServ.getUser()
+		// .then(data => {
+		// })
 		// var id = this.route.snapshot.params.id;
 		// var ID = Number(id);
 		// this.friendData = this.friendServ.getFriends(ID);
