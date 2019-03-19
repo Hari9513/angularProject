@@ -1,7 +1,11 @@
-.form-align {
-    margin: 165px 0px 0px 370px;
+.button-align {
+  cursor: not-allowed;
 }
 
-.button-align {
-    cursor: not-allowed;
+.form-align {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }

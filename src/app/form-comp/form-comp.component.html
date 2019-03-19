@@ -1,10 +1,9 @@
-
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-sm-12">
       <div class="text-right mt-10">
         <button class="btn btn-primary" routerLink="/newForm">Create User</button>
-			</div>
+      </div>
       <table class="table table-bordered mt-10">
         <thead>
           <tr>
@@ -14,17 +13,17 @@
             <th class="text-center">PAN Number</th>
             <th class="text-center">Aadhaar Number</th>
             <th class="text-center">Action</th>
-            <!-- <th>Delete</th> -->
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let user of userData index as i">
-          	<td class="text-center">{{i+1}}</td>
+            <td class="text-center">{{i+1}}</td>
             <td class="text-center text-capitalize">{{user.name?user.name:'N/A'}}</td>
             <td class="text-center">{{user.address?user.address:'N/A'}}</td>
             <td class="text-center">{{user.pan}}</td>
             <td class="text-center">{{user.aadhar?user.aadhar:'N/A'}}</td>
-            <td class="text-center"><span routerLink="/viewUser" [queryParams]="{id: i}">Edit</span>&nbsp; | &nbsp;<span (click)="deleteUser(user.email)">Delete</span></td>
+            <td class="text-center"><span routerLink="/viewUser" [queryParams]="{id: i}">Edit</span>&nbsp; | &nbsp;<span
+                (click)="deleteUser(user.email)">Delete</span></td>
             <!-- <td class="text-center"></td> -->
           </tr>
         </tbody>

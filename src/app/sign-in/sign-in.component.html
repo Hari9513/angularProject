@@ -1,5 +1,5 @@
-<div class="container text-center mt-3">
-  <div class="form-align col-4">
+<div class="container form-align mt-3">
+  <div class="col-4" style="flex: unset">
     <form [formGroup]="signInForm" (ngSubmit)="signIn()">
       <div class="form-group">
         <input type="text" placeholder="Email" class="form-control" formControlName="email">
@@ -11,5 +11,13 @@
         <button type="submit" class="form-control btn btn-primary button-align" [disabled]="signInForm.invalid">Sign In</button>
       </div>
     </form>
+  </div>
+  <div>
+    -------- OR --------
+  </div>
+  <div class="social-login">
+    <div class="google" (click)="socialSignIn('google')">
+      <img src="https://img.icons8.com/color/48/000000/google-logo.png">
+    </div>
   </div>
 </div>

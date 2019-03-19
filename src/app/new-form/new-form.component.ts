@@ -9,24 +9,29 @@ import { UserService } from '../services/common/user.service';
 	styleUrls: ['./new-form.component.css']
 })
 export class NewFormComponent implements OnInit {
-	user= {};
+	user = {};
 
 	constructor(
 		private userService: UserService,
 		private route: Router
-		) { }
+	) { }
 
 	ngOnInit() {
 	}
 
-	submitForm(user){
-		this.userService.createUser(user)
-		.then(data => {
-			this.route.navigate(['/userList'])
-		})
-		.catch(error => {
-			console.log(error)
-		})
+	submitForm(user) {
+		console.log(user);
+		if (user) {
+			this.userService.createUser(user)
+				.then(data => {
+					this.route.navigate(['/userList'])
+				})
+				.catch(error => {
+					console.log(error)
+				})
+		} else {
+			alert('Invalid Details')
+		}
 	}
 
 }
